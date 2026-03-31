@@ -223,22 +223,30 @@
                 </div>
                 <div class="col-lg-8">
                     <div class="card p-4 p-md-5 shadow-sm border-0 rounded-4">
-                        <h3 class="fw-bold mb-4">Contact with Somatra</h3>
-                        <form id="contactForm">
+                        <h3 class="fw-bold mb-4" data-i18n="contact-form-title">Contact with Somatra</h3>
+
+                        <form id="contactForm" action="https://formspree.io/f/xqegeorp" method="POST">
                             <div class="row g-3">
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control" placeholder="Your Name" required>
+                                    <input type="text" name="name" class="form-control" placeholder="Your Name" required
+                                        data-i18n-placeholder="form-name">
                                 </div>
                                 <div class="col-md-6">
-                                    <input type="email" class="form-control" placeholder="Your Email" required>
+                                    <input type="email" name="_replyto" class="form-control" placeholder="Your Email"
+                                        required data-i18n-placeholder="form-email">
                                 </div>
                                 <div class="col-12">
-                                    <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                                    <textarea name="message" class="form-control" rows="5" placeholder="Your Message"
+                                        required data-i18n-placeholder="form-msg"></textarea>
                                 </div>
+                                <input type="hidden" name="_subject" value="New Message from Somatra Website">
+
                                 <div class="col-12 text-end">
-                                    <button type="submit" class="btn btn-purple btn-lg px-5 rounded-pill">Send Message</button>
+                                    <button type="submit" id="submitBtn" class="btn btn-purple btn-lg px-5 rounded-pill"
+                                        data-i18n="form-btn">Send Message</button>
                                 </div>
                             </div>
+                            <div id="formStatus" class="mt-3 text-center"></div>
                         </form>
                     </div>
                 </div>
